@@ -13,8 +13,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 import requests
 
 class NewsamSpider(scrapy.Spider):
@@ -88,8 +86,7 @@ class NewsamSpider(scrapy.Spider):
             ]
             chrome_options.add_argument(f'--user-agent={random.choice(user_agents)}')
             
-            service = Service(ChromeDriverManager().install())
-            self.driver = webdriver.Chrome(service=service, options=chrome_options)
+            self.driver = webdriver.Chrome(options=chrome_options)
             
             # Additional anti-detection
             self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")

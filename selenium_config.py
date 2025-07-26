@@ -2,10 +2,12 @@
 # This file contains Selenium setup optimized for Render.com environment
 
 import os
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 def get_selenium_driver():
     """
@@ -67,10 +69,10 @@ def get_selenium_driver():
         chrome_options.add_argument("--js-flags=--max-old-space-size=128")
         
         # Set up Chrome service
-        service = Service(ChromeDriverManager().install())
+        # service = Service(ChromeDriverManager().install()) # This line is removed
         
         # Create driver
-        driver = webdriver.Chrome(service=service, options=chrome_options)
+        driver = webdriver.Chrome(options=chrome_options)
         
         # Set page load timeout
         driver.set_page_load_timeout(30)
