@@ -24,10 +24,6 @@ pytz==2023.3
 colorlog==6.8.0
 psutil==5.9.6  # For memory monitoring
 
-# Memory optimization
-gc  # Built-in garbage collector
-weakref  # Built-in weak references
-
 # Telegram Bot - Keep v13.15 to avoid compatibility issues
 python-telegram-bot==13.15
 
