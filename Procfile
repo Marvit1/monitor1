@@ -1,0 +1,1 @@
+worker: python monitor_news_group1.py 

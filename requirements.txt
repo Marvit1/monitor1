@@ -1,0 +1,36 @@
+# HTTP requests for API communication
+requests==2.31.0
+urllib3==2.0.7
+
+# Scrapy Framework - Using stable version for better compatibility
+Scrapy==2.11.0
+# scrapy-user-agents==0.1.1  # Removed - not needed for memory optimization
+
+# Twisted - Using stable version for better signal handling
+Twisted==22.10.0
+
+# Selenium (for dynamic content) - Memory optimized
+selenium==4.15.2
+# webdriver-manager==4.0.1  # Removed - Chrome driver should be installed separately
+
+# Redis (for caching)
+redis==5.0.1
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Logging and monitoring
+colorlog==6.8.0
+psutil==5.9.6  # For memory monitoring
+
+# Memory optimization
+gc  # Built-in garbage collector
+weakref  # Built-in weak references
+
+# Telegram Bot - Keep v13.15 to avoid compatibility issues
+python-telegram-bot==13.15
+
+# Development (optional - can be removed for production)
+# pytest==7.4.3
+# pytest-django==4.7.0 
